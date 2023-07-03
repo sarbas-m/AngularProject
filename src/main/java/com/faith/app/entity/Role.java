@@ -19,9 +19,7 @@ public class Role {
 
     private String roleName;
     
-    @JsonBackReference
-    @OneToMany(mappedBy = "role")
-    private List<User> users;
+   
 
 
 	public Integer getRoleId() {
@@ -44,14 +42,6 @@ public class Role {
 	}
 
 
-	public List<User> getUsers() {
-		return users;
-	}
-
-
-	public void setUsers(List<User> users) {
-		this.users = users;
-	}
 
 
 	public Role() {
@@ -66,12 +56,7 @@ public class Role {
 	}
 
 
-	public Role(Integer roleId, String roleName, List<User> users) {
-		super();
-		this.roleId = roleId;
-		this.roleName = roleName;
-		this.users = users;
-	}
+
 
     
         

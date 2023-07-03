@@ -79,18 +79,6 @@ public class Diagnos {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Diagnos(Integer diagnosId, String diagnos, LocalDate diagnosCreatedOn, String diagnosIsActive,
-			Appointment appointment) {
-		super();
-		this.diagnosId = diagnosId;
-		this.diagnos = diagnos;
-		this.diagnosCreatedOn = diagnosCreatedOn;
-		this.diagnosIsActive = diagnosIsActive;
-		this.appointment = appointment;
-	}
 
-
-	
-	
 
 }

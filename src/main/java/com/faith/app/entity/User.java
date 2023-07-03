@@ -25,9 +25,7 @@ public class User {
 	@JoinColumn(name="roleId",insertable = false, updatable = false)
 	private Role role;
 	
-	@JsonBackReference
-	@OneToOne(mappedBy="user")
-	private Doctor doctor;
+
 	
 	@JsonBackReference
 	@OneToOne(mappedBy="user")
@@ -65,14 +63,6 @@ public class User {
 		this.role = role;
 	}
 
-	public Doctor getDoctor() {
-		return doctor;
-	}
-
-	public void setDoctor(Doctor doctor) {
-		this.doctor = doctor;
-	}
-
 	public Staff getStaff() {
 		return staff;
 	}
@@ -80,4 +70,11 @@ public class User {
 	public void setStaff(Staff staff) {
 		this.staff = staff;
 	}
+
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", userName=" + userName + ", passWord=" + passWord + ", roleId=" + roleId
+				+ ", role=" + role + ", staff=" + staff + "]";
+	}
+	
 }

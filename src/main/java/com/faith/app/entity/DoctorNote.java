@@ -65,11 +65,7 @@ public class DoctorNote {
 		this.appointment = appointment;
 	}
 
-	/*@Override
-	public String toString() {
-		return "DoctorNote [doctorNoteId=" + doctorNoteId + ", note=" + note + ", doctorNoteCreatedOn="
-				+ doctorNoteCreatedOn + ", appointment=" + appointment + "]";
-	}*/
+
 
 	public DoctorNote() {
 		super();
@@ -79,6 +75,12 @@ public class DoctorNote {
 	public DoctorNote(Appointment appointment) {
 		super();
 		this.appointment = appointment;
+	}
+
+	@Override
+	public String toString() {
+		return "DoctorNote [doctorNoteId=" + doctorNoteId + ", note=" + note + ", doctorNoteCreatedOn="
+				+ doctorNoteCreatedOn + ", appointmentId=" + appointmentId + ", appointment=" + appointment + "]";
 	}
 
 }

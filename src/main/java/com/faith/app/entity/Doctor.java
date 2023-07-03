@@ -74,9 +74,7 @@ public class Doctor {
     @JoinColumn(name="departmentId",insertable=false,updatable=false)
     private Department department;
     
-	@JsonBackReference
-	@OneToMany(mappedBy="doctor")
-	private List<Appointment> appointment;
+
 
 	public Doctor() {
 		super();
@@ -211,14 +209,6 @@ public class Doctor {
 		this.department = department;
 	}
 
-	public List<Appointment> getAppointment() {
-		return appointment;
-	}
-
-	public void setAppointment(List<Appointment> appointment) {
-		this.appointment = appointment;
-	}
-
 	@Override
 	public String toString() {
 		return "Doctor [doctorId=" + doctorId + ", doctorRegNo=" + doctorRegNo + ", doctorName=" + doctorName
@@ -226,9 +216,12 @@ public class Doctor {
 				+ doctorBloodGroup + ", doctorPhoneNo=" + doctorPhoneNo + ", doctorAddress=" + doctorAddress
 				+ ", doctorQualification=" + doctorQualification + ", doctorEmail=" + doctorEmail
 				+ ", doctorConsultationFee=" + doctorConsultationFee + ", isActive=" + isActive + ", userId=" + userId
-				+ ", user=" + user + ", departmentId=" + departmentId + ", department=" + department + ", appointment="
-				+ appointment + "]";
+				+ ", user=" + user + ", departmentId=" + departmentId + ", department=" + department + "]";
 	}
+
+
+
+
 
 	
 }

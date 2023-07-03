@@ -33,12 +33,7 @@ public class MedicineCompany {
 	 }
 	
  }
-@JsonBackReference
- @OneToMany(mappedBy="medicineCompany")
- private List<Medicine> medicine;
-@JsonBackReference
- @OneToMany(mappedBy="medicineCompany")
- private List<MedicineOrder> medicineOrder;
+
 
 
 
@@ -74,43 +69,24 @@ public void setCompanyCreatedOn(LocalDate companyCreatedOn) {
 	this.companyCreatedOn = companyCreatedOn;
 }
 
-public List<Medicine> getMedicine() {
-	return medicine;
-}
 
-public void setMedicine(List<Medicine> medicine) {
-	this.medicine = medicine;
-}
 
-public List<MedicineOrder> getMedicineOrder() {
-	return medicineOrder;
-}
-
-public void setMedicineOrder(List<MedicineOrder> medicineOrder) {
-	this.medicineOrder = medicineOrder;
-}
-
-@Override
-public String toString() {
-	return "MedicineCompany [companyId=" + companyId + ", companyNumber=" + companyNumber + ", companyName="
-			+ companyName + ", companyCreatedOn=" + companyCreatedOn + ", medicine=" + medicine + "]";
-}
 
 public MedicineCompany() {
 	super();
 	// TODO Auto-generated constructor stub
 }
 
-public MedicineCompany(Integer companyId, String companyNumber, String companyName, LocalDate companyCreatedOn,
-		List<Medicine> medicine, List<MedicineOrder> medicineOrder) {
-	super();
-	this.companyId = companyId;
-	this.companyNumber = companyNumber;
-	this.companyName = companyName;
-	this.companyCreatedOn = companyCreatedOn;
-	this.medicine = medicine;
-	this.medicineOrder = medicineOrder;
+
+
+
+@Override
+public String toString() {
+	return "MedicineCompany [companyId=" + companyId + ", companyNumber=" + companyNumber + ", companyName="
+			+ companyName + ", companyCreatedOn=" + companyCreatedOn + "]";
 }
+
+
 	
 	
  

@@ -45,9 +45,6 @@ public class Patient {
 	private String patientIsActive;
 	private LocalDate validityDate;
 	
-	@JsonBackReference
-	@OneToMany(mappedBy="patient")
-	private List<Appointment> appointment;
 
 	public Integer getPatientId() {
 		return patientId;
@@ -137,13 +134,7 @@ public class Patient {
 		this.validityDate = validityDate;
 	}
 
-	public List<Appointment> getAppointment() {
-		return appointment;
-	}
 
-	public void setAppointment(List<Appointment> appointment) {
-		this.appointment = appointment;
-	}
 
 	public Patient() {
 		super();
@@ -156,27 +147,12 @@ public class Patient {
 				+ patientName + ", patientAge=" + patientAge + ", patientGender=" + patientGender
 				+ ", patientPhoneNumber=" + patientPhoneNumber + ", patientAddress=" + patientAddress
 				+ ", patientBloodGroup=" + patientBloodGroup + ", patientCreatedOn=" + patientCreatedOn
-				+ ", patientIsActive=" + patientIsActive + ", validityDate=" + validityDate + ", appointment="
-				+ appointment + "]";
+				+ ", patientIsActive=" + patientIsActive + ", validityDate=" + validityDate + "]";
 	}
 
-	public Patient(Integer patientId, String registrationNumber, String patientName, Integer patientAge,
-			String patientGender, String patientPhoneNumber, String patientAddress, String patientBloodGroup,
-			LocalDate patientCreatedOn, String patientIsActive, LocalDate validityDate, List<Appointment> appointment) {
-		super();
-		this.patientId = patientId;
-		this.registrationNumber = registrationNumber;
-		this.patientName = patientName;
-		this.patientAge = patientAge;
-		this.patientGender = patientGender;
-		this.patientPhoneNumber = patientPhoneNumber;
-		this.patientAddress = patientAddress;
-		this.patientBloodGroup = patientBloodGroup;
-		this.patientCreatedOn = patientCreatedOn;
-		this.patientIsActive = patientIsActive;
-		this.validityDate = validityDate;
-		this.appointment = appointment;
-	}
+
+
+
 	
 
 

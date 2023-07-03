@@ -32,18 +32,14 @@ public class Medicine {
 		if(medicineIsActive == null)   
 			medicineIsActive = "true";
 	}
-	@JsonBackReference
-	@OneToMany(mappedBy="medicine")
-	private List<MedicinePrescription> medicinePrescription;
+
 	
 	private Integer companyId;
 	@ManyToOne
 	@JoinColumn(name="companyId",insertable=false,updatable=false)
 	private MedicineCompany medicineCompany;
 	
-	@JsonBackReference
-	@OneToMany(mappedBy="medicine")
-	private List<MedicineOrder> medicineOrder;
+	
 	public Integer getMedicineId() {
 		return medicineId;
 	}
@@ -92,13 +88,7 @@ public class Medicine {
 		this.medicineIsActive = medicineIsActive;
 	}
 
-	public List<MedicinePrescription> getMedicinePrescription() {
-		return medicinePrescription;
-	}
 
-	public void setMedicinePrescription(List<MedicinePrescription> medicinePrescription) {
-		this.medicinePrescription = medicinePrescription;
-	}
 
 	public Integer getCompanyId() {
 		return companyId;
@@ -116,34 +106,14 @@ public class Medicine {
 		this.medicineCompany = medicineCompany;
 	}
 
-	public List<MedicineOrder> getMedicineOrder() {
-		return medicineOrder;
-	}
-
-	public void setMedicineOrder(List<MedicineOrder> medicineOrder) {
-		this.medicineOrder = medicineOrder;
-	}
+	
 
 	public Medicine() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Medicine(Integer medicineId, String medicineNumber, String medicineName, Integer quantity, Double price,
-			String medicineIsActive, List<MedicinePrescription> medicinePrescription, Integer companyId,
-			MedicineCompany medicineCompany, List<MedicineOrder> medicineOrder) {
-		super();
-		this.medicineId = medicineId;
-		this.medicineNumber = medicineNumber;
-		this.medicineName = medicineName;
-		this.quantity = quantity;
-		this.price = price;
-		this.medicineIsActive = medicineIsActive;
-		this.medicinePrescription = medicinePrescription;
-		this.companyId = companyId;
-		this.medicineCompany = medicineCompany;
-		this.medicineOrder = medicineOrder;
-	}
+
 
 	@Override
 	public String toString() {

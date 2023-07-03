@@ -40,9 +40,7 @@ public class Test {
 			testCreatedOn=LocalDate.now();
 		}
 		}
-	@JsonBackReference
-	@OneToMany(mappedBy="test")
-	List<TestPrescription>testPrescription;
+	
 
 	public Integer getTestId() {
 		return testId;
@@ -116,13 +114,7 @@ public class Test {
 		this.testCreatedOn = testCreatedOn;
 	}
 
-	public List<TestPrescription> getTestPrescription() {
-		return testPrescription;
-	}
-
-	public void setTestPrescription(List<TestPrescription> testPrescription) {
-		this.testPrescription = testPrescription;
-	}
+	
 
 	public Test() {
 		super();
@@ -136,20 +128,7 @@ public class Test {
 				+ isActive + ", testCreatedOn=" + testCreatedOn + "]";
 	}
 
-	public Test(Integer testId, String testNumber, String testName, Integer lowRange, Integer highRange, String unit,
-			Integer testPrice, String isActive, LocalDate testCreatedOn, List<TestPrescription> testPrescription) {
-		super();
-		this.testId = testId;
-		this.testNumber = testNumber;
-		this.testName = testName;
-		this.lowRange = lowRange;
-		this.highRange = highRange;
-		Unit = unit;
-		this.testPrice = testPrice;
-		this.isActive = isActive;
-		this.testCreatedOn = testCreatedOn;
-		this.testPrescription = testPrescription;
-	}
+
 	
 
 

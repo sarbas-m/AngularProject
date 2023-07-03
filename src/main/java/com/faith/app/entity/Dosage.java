@@ -17,8 +17,7 @@ public class Dosage {
 	private String dosagePattern;
 	private Integer dosageQty;
 	
-	@OneToMany(mappedBy="dosage",fetch=FetchType.EAGER)
-	private List<MedicinePrescription> medicinePrescription;
+	
 
 	public Dosage() {
 		super();
@@ -49,27 +48,14 @@ public class Dosage {
 		this.dosageQty = dosageQty;
 	}
 
-	public List<MedicinePrescription> getMedicinePrescription() {
-		return medicinePrescription;
-	}
 
-	public void setMedicinePrescription(List<MedicinePrescription> medicinePrescription) {
-		this.medicinePrescription = medicinePrescription;
-	}
 
 	@Override
 	public String toString() {
 		return "Dosage [dosageId=" + dosageId + ", dosagePattern=" + dosagePattern + ", dosageQty=" + dosageQty + "]";
 	}
 
-	public Dosage(Integer dosageId, String dosagePattern, Integer dosageQty,
-			List<MedicinePrescription> medicinePrescription) {
-		super();
-		this.dosageId = dosageId;
-		this.dosagePattern = dosagePattern;
-		this.dosageQty = dosageQty;
-		this.medicinePrescription = medicinePrescription;
-	}
+
 
 
 	

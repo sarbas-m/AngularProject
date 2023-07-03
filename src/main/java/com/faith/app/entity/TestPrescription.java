@@ -45,9 +45,7 @@ public class TestPrescription {
 	@JoinColumn(name="testId", insertable = false, updatable = false)
 	private Test test;
 	
-	@JsonBackReference
-	@OneToOne(mappedBy="testPrescription")
-	private TestReport testReport;
+	
 
 	@Override
 	public String toString() {
@@ -117,26 +115,8 @@ public class TestPrescription {
 		this.test = test;
 	}
 
-	public TestReport getTestReport() {
-		return testReport;
-	}
+	
 
-	public void setTestReport(TestReport testReport) {
-		this.testReport = testReport;
-	}
-
-	public TestPrescription(Integer testPrescriptionId, LocalDate testPresCreatedOn, String testPresIsActive,
-			Integer appointmentId, Appointment appointment, Integer testId, Test test, TestReport testReport) {
-		super();
-		this.testPrescriptionId = testPrescriptionId;
-		this.testPresCreatedOn = testPresCreatedOn;
-		this.testPresIsActive = testPresIsActive;
-		this.appointmentId = appointmentId;
-		this.appointment = appointment;
-		this.testId = testId;
-		this.test = test;
-		this.testReport = testReport;
-	}
 
 
 }
