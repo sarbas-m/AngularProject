@@ -12,6 +12,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 public class Test {
 	
@@ -38,7 +40,7 @@ public class Test {
 			testCreatedOn=LocalDate.now();
 		}
 		}
-	
+	@JsonBackReference
 	@OneToMany(mappedBy="test")
 	List<TestPrescription>testPrescription;
 

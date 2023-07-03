@@ -13,6 +13,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 public class Medicine {
 	
@@ -30,6 +32,7 @@ public class Medicine {
 		if(medicineIsActive == null)   
 			medicineIsActive = "true";
 	}
+	@JsonBackReference
 	@OneToMany(mappedBy="medicine")
 	private List<MedicinePrescription> medicinePrescription;
 	
@@ -38,6 +41,7 @@ public class Medicine {
 	@JoinColumn(name="companyId",insertable=false,updatable=false)
 	private MedicineCompany medicineCompany;
 	
+	@JsonBackReference
 	@OneToMany(mappedBy="medicine")
 	private List<MedicineOrder> medicineOrder;
 	public Integer getMedicineId() {

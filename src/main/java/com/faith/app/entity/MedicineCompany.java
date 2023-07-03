@@ -12,6 +12,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 public class MedicineCompany {
  @Id
@@ -31,9 +33,10 @@ public class MedicineCompany {
 	 }
 	
  }
+@JsonBackReference
  @OneToMany(mappedBy="medicineCompany")
  private List<Medicine> medicine;
- 
+@JsonBackReference
  @OneToMany(mappedBy="medicineCompany")
  private List<MedicineOrder> medicineOrder;
 

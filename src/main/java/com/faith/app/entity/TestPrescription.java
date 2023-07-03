@@ -12,6 +12,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 public class TestPrescription {
 	
@@ -43,6 +45,7 @@ public class TestPrescription {
 	@JoinColumn(name="testId", insertable = false, updatable = false)
 	private Test test;
 	
+	@JsonBackReference
 	@OneToOne(mappedBy="testPrescription")
 	private TestReport testReport;
 

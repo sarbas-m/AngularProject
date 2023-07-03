@@ -17,6 +17,8 @@ import javax.persistence.PreUpdate;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 public class Doctor {
 
@@ -72,6 +74,7 @@ public class Doctor {
     @JoinColumn(name="departmentId",insertable=false,updatable=false)
     private Department department;
     
+	@JsonBackReference
 	@OneToMany(mappedBy="doctor")
 	private List<Appointment> appointment;
 

@@ -12,6 +12,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 public class Patient {
 	
@@ -43,6 +45,7 @@ public class Patient {
 	private String patientIsActive;
 	private LocalDate validityDate;
 	
+	@JsonBackReference
 	@OneToMany(mappedBy="patient")
 	private List<Appointment> appointment;
 
