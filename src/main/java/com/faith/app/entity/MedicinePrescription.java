@@ -149,5 +149,11 @@ public class MedicinePrescription {
 				+ ", medicineId=" + medicineId + ", medicine=" + medicine + "]";
 	}
 
+	public MedicinePrescription() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+
 	
 }

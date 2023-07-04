@@ -31,9 +31,7 @@ public class User {
 	@OneToOne(mappedBy="user")
 	private Staff staff;
 
-	public int getUserId() {
-		return userId;
-	}
+	
 
 	public void setUserId(int userId) {
 		this.userId = userId;
@@ -76,5 +74,23 @@ public class User {
 		return "User [userId=" + userId + ", userName=" + userName + ", passWord=" + passWord + ", roleId=" + roleId
 				+ ", role=" + role + ", staff=" + staff + "]";
 	}
+
+	public Integer getRoleId() {
+		return roleId;
+	}
+
+	public void setRoleId(Integer roleId) {
+		this.roleId = roleId;
+	}
+
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+
+	
 	
 }
