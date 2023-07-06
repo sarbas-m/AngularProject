@@ -145,6 +145,14 @@ public class Appointment {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public String toString() {
+		return "Appointment [appointmentId=" + appointmentId + ", tokenNo=" + tokenNo + ", appointmentIsActive="
+				+ appointmentIsActive + ", appCreatedOn=" + appCreatedOn + ", appValidityDate=" + appValidityDate
+				+ ", patientId=" + patientId + ", patient=" + patient + ", departmentId=" + departmentId + ", doctorId="
+				+ doctorId + ", doctor=" + doctor + "]";
+	}
+
 
 	
 
