@@ -28,6 +28,7 @@ public class Patient {
 	private String patientAddress;
 	private String patientBloodGroup;
     private LocalDate patientCreatedOn;
+    private String patientEmail;
     
     @PrePersist
 	@PreUpdate
@@ -141,13 +142,24 @@ public class Patient {
 		// TODO Auto-generated constructor stub
 	}
 
+
+
+	public String getPatientEmail() {
+		return patientEmail;
+	}
+
+	public void setPatientEmail(String patientEmail) {
+		this.patientEmail = patientEmail;
+	}
+
 	@Override
 	public String toString() {
 		return "Patient [patientId=" + patientId + ", registrationNumber=" + registrationNumber + ", patientName="
 				+ patientName + ", patientAge=" + patientAge + ", patientGender=" + patientGender
 				+ ", patientPhoneNumber=" + patientPhoneNumber + ", patientAddress=" + patientAddress
 				+ ", patientBloodGroup=" + patientBloodGroup + ", patientCreatedOn=" + patientCreatedOn
-				+ ", patientIsActive=" + patientIsActive + ", validityDate=" + validityDate + "]";
+				+ ", patientEmail=" + patientEmail + ", patientIsActive=" + patientIsActive + ", validityDate="
+				+ validityDate + "]";
 	}
 
 

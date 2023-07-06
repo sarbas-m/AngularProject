@@ -19,7 +19,7 @@ public class Diagnos {
 	private Integer diagnosId;
 	private String diagnos;
 	private LocalDate diagnosCreatedOn;
-	private String diagnosIsActive;
+	
 	
 	@PrePersist
 	@PreUpdate
@@ -58,13 +58,8 @@ public class Diagnos {
 		this.diagnosCreatedOn = diagnosCreatedOn;
 	}
 
-	public String getDiagnosIsActive() {
-		return diagnosIsActive;
-	}
 
-	public void setDiagnosIsActive(String diagnosIsActive) {
-		this.diagnosIsActive = diagnosIsActive;
-	}
+	
 
 	public Appointment getAppointment() {
 		return appointment;
@@ -77,6 +72,14 @@ public class Diagnos {
 	public Diagnos() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	public Integer getAppointmentId() {
+		return appointmentId;
+	}
+
+	public void setAppointmentId(Integer appointmentId) {
+		this.appointmentId = appointmentId;
 	}
 
 

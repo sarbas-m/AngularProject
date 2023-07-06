@@ -18,9 +18,6 @@ public class Role {
     private Integer roleId;
 
     private String roleName;
-    
-   
-
 
 	public Integer getRoleId() {
 		return roleId;
