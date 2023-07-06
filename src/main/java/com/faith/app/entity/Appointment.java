@@ -49,10 +49,7 @@ public class Appointment {
 	private Patient patient;
 	
 	private Integer departmentId;
-	@ManyToOne
-	@JoinColumn(name = "departmentId",insertable=false,updatable=false)
-	private Department department;
-    
+
 	private Integer doctorId;
 	@ManyToOne
 	@JoinColumn(name = "doctorId",insertable=false,updatable=false)
@@ -124,13 +121,7 @@ public class Appointment {
 		this.departmentId = departmentId;
 	}
 	
-	public Department getDepartment() {
-		return department;
-	}
 
-	public void setDepartment(Department department) {
-		this.department = department;
-	}
 
 	public Integer getDoctorId() {
 		return doctorId;
@@ -154,13 +145,6 @@ public class Appointment {
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public String toString() {
-		return "Appointment [appointmentId=" + appointmentId + ", tokenNo=" + tokenNo + ", appointmentIsActive="
-				+ appointmentIsActive + ", appCreatedOn=" + appCreatedOn + ", appValidityDate=" + appValidityDate
-				+ ", patientId=" + patientId + ", patient=" + patient + ", departmentId=" + departmentId
-				+ ", department=" + department + ", doctorId=" + doctorId + ", doctor=" + doctor + "]";
-	}
 
 	
 
