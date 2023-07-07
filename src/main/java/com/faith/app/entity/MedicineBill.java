@@ -19,14 +19,38 @@ public class MedicineBill {
 	private Double medicineBillAmount;
 	private LocalDate medBillCreatedOn;
 	private String medBillIsActive;
+	private String medicineBillNo;
 	@PrePersist
 	@PreUpdate
 	private void persist() {
 		if(medBillIsActive==null)
 			medBillIsActive="true";
+		if(medBillCreatedOn==null) { //we set default value in case if the value is not set yet
+			medBillCreatedOn=LocalDate.now();
+		}
 	}
 	
 	
+	public String getMedicineBillNo() {
+		return medicineBillNo;
+	}
+
+
+	public void setMedicineBillNo(String medicineBillNo) {
+		this.medicineBillNo = medicineBillNo;
+	}
+
+
+	public void setMedicineBillId(Integer medicineBillId) {
+		this.medicineBillId = medicineBillId;
+	}
+
+
+	public void setMedicineBillAmount(Double medicineBillAmount) {
+		this.medicineBillAmount = medicineBillAmount;
+	}
+
+
 	@ManyToOne
 	@JoinColumn(name="appointmentId",insertable=false,updatable=false)
 	private Appointment appointment;

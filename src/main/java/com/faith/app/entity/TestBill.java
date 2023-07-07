@@ -22,6 +22,8 @@ public class TestBill {
 
 	private LocalDate testBillCreatedOn;
 	private String testBillIsActive;
+	
+	private String testBillNo;
 
 	@PrePersist
 	@PreUpdate
@@ -32,6 +34,13 @@ public class TestBill {
 		if (testBillCreatedOn == null) {
 			testBillCreatedOn = LocalDate.now();
 		}
+	}
+
+	public String getTestBillNo() {
+		return testBillNo;
+	}
+	public void setTestBillNo(String testBillNo) {
+		this.testBillNo = testBillNo;
 	}
 
 	private Integer appointmentId;

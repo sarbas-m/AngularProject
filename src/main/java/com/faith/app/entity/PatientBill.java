@@ -19,14 +19,25 @@ public class PatientBill {
 	private Integer patientBillAmount;
 	private LocalDate patientbillCreatedOn;
 	private String patientBillIsActive;
+	private String patientBillNo;
 	
 	@PrePersist
 	@PreUpdate	
 	private void persist() {
 		if(patientBillIsActive==null)
 			patientBillIsActive="true";
+		if(patientbillCreatedOn==null) { //we set default value in case if the value is not set yet
+			patientbillCreatedOn=LocalDate.now();
+		}
 	}
 	
+	public String getPatientBillNo() {
+		return patientBillNo;
+	}
+	public void setPatientBillNo(String patientBillNo) {
+		this.patientBillNo = patientBillNo;
+	}
+
 	private Integer appointmentId;
 	@ManyToOne
 	@JoinColumn(name="appointmentId",insertable=false,updatable=false)
