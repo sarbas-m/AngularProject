@@ -54,13 +54,11 @@ public class MedicineBill {
 	@ManyToOne
 	@JoinColumn(name="appointmentId",insertable=false,updatable=false)
 	private Appointment appointment;
-	public int getMedicineBillId() {
+
+
+
+	public Integer getMedicineBillId() {
 		return medicineBillId;
-	}
-
-
-	public void setMedicineBillId(int medicineBillId) {
-		this.medicineBillId = medicineBillId;
 	}
 
 
