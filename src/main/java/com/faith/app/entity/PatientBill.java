@@ -38,10 +38,10 @@ public class PatientBill {
 		this.patientBillNo = patientBillNo;
 	}
 
-	private Integer appointmentId;
+	private Integer patientId;
 	@ManyToOne
-	@JoinColumn(name="appointmentId",insertable=false,updatable=false)
-	private Appointment appointment;
+	@JoinColumn(name="patientId",insertable=false,updatable=false)
+	private Patient patient;
 
 	public Integer getPatientBillId() {
 		return patientBillId;
@@ -67,38 +67,29 @@ public class PatientBill {
 	public void setPatientBillIsActive(String patientBillIsActive) {
 		this.patientBillIsActive = patientBillIsActive;
 	}
-	public Integer getAppointmentId() {
-		return appointmentId;
-	}
-	public void setAppointmentId(Integer appointmentId) {
-		this.appointmentId = appointmentId;
-	}
-	public Appointment getAppointment() {
-		return appointment;
-	}
-	public void setAppointment(Appointment appointment) {
-		this.appointment = appointment;
-	}
-	@Override
-	public String toString() {
-		return "PatientBill [patientBillId=" + patientBillId + ", patientBillAmount=" + patientBillAmount
-				+ ", patientbillCreatedOn=" + patientbillCreatedOn + ", patientBillIsActive=" + patientBillIsActive
-				+ ", appointmentId=" + appointmentId + ", appointment=" + appointment + "]";
-	}
+
+
 	public PatientBill() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public PatientBill(Integer patientBillId, Integer patientBillAmount, LocalDate patientbillCreatedOn,
-			String patientBillIsActive, Integer appointmentId, Appointment appointment) {
-		super();
-		this.patientBillId = patientBillId;
-		this.patientBillAmount = patientBillAmount;
-		this.patientbillCreatedOn = patientbillCreatedOn;
-		this.patientBillIsActive = patientBillIsActive;
-		this.appointmentId = appointmentId;
-		this.appointment = appointment;
+
+	public Integer getPatientId() {
+		return patientId;
 	}
+
+	public void setPatientId(Integer patientId) {
+		this.patientId = patientId;
+	}
+
+	public Patient getPatient() {
+		return patient;
+	}
+
+	public void setPatient(Patient patient) {
+		this.patient = patient;
+	}
+
 	
 	
 
