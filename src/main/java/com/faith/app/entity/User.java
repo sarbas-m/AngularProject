@@ -19,6 +19,8 @@ public class User {
 	
 	private String userName;
 	private String passWord;
+	private String email;
+	private Integer otp;
 	
 	private Integer roleId;
 	@ManyToOne
@@ -27,6 +29,22 @@ public class User {
 	
 
 	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Integer getOtp() {
+		return otp;
+	}
+
+	public void setOtp(Integer otp) {
+		this.otp = otp;
+	}
+
 	@JsonBackReference
 	@OneToOne(mappedBy="user")
 	private Staff staff;

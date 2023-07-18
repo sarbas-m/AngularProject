@@ -7,5 +7,8 @@ import com.faith.app.entity.MedicineOrder;
 
 @Repository
 public interface IMedOrderRepository extends CrudRepository<MedicineOrder, Integer>  {
+	
+	
+	
 
 }

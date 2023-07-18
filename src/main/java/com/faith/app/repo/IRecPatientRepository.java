@@ -18,4 +18,5 @@ public interface IRecPatientRepository extends CrudRepository<Patient, Integer>{
 	@Query("SELECT p.registrationNumber FROM Patient p where p.patientId=?1")
 	public String getRegistrationNumber(int patientId);
 	
+	
 }

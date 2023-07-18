@@ -25,12 +25,13 @@ public class MedPresController {
 		
 		@GetMapping("press")
 		public List<MedicinePrescription>getMedPres(){
+			System.out.println("hihh");
 			return medPresService.getMedPrescription();
 		}
 		
 		@GetMapping("press/{appointmentId}")
 		public List<MedicinePrescription> getMedicinePresHistory(@PathVariable int appointmentId){
-
+         System.out.println("hi"+appointmentId);
 		return medPresService.getPresHistory(appointmentId);
 		}
 		

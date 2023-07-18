@@ -34,33 +34,6 @@ public class RecBillController {
 	@GetMapping("/bills/{patientId}")
 	public List<ReceptionistBill> getBillByapId(@PathVariable int patientId) {
 
-		/*PatientBill patientBill = new PatientBill();
-		
-		Appointment appoin = appointmentService.getAppoinmentById(apId);
-		System.out.println(appoin.toString());
-		System.out.println(appoin.getPatient().toString());
-		System.out.println(appoin.getPatient().getPatientId());
-		int totalFee = 150;
-		int patientId = appoin.getPatient().getPatientId();
-		int consulfee =0;
-		List<Appointment> appoinmentList = appointmentService.listAppointByPatient(patientId);
-		System.out.println(appoinmentList.size());
-		
-		for (int i = 0; i < appoinmentList.size(); i++) {
-			
-			consulfee = appoinmentList.get(i).getDoctor().getDoctorConsultationFee()+consulfee;
-			
-			
-
-		}
-
-		patientBill.setPatientBillAmount(totalFee+consulfee);
-		//patientBill.setAppointmentId(apId);
-		//patientBill.setAppointment(appoin);
-		//patientBill=recbillservice.addBill(patientBill);
-		System.out.println("llghgf");
-		System.out.println(patientBill.toString());
-		System.out.println(recbillservice.gettingTheBillByApId(apId));*/
 		
 		List<ReceptionistBill>forBillReception=new ArrayList<ReceptionistBill>();
 		ReceptionistBill recBill= new ReceptionistBill();
@@ -76,10 +49,14 @@ public class RecBillController {
 			
 			//String doctorName=appointList.get(i).getDoctor().getDoctorName();
 			 doctorFee=appointList.get(i).getDoctor().getDoctorConsultationFee()+doctorFee;
+			LocalDate patientRegDate=appointList.get(i).getPatient().getPatientCreatedOn();
+			if(patientRegDate.isBefore(LocalDate.now())) {
+				regFee=0;
+			}
 			
 		}
 		int totalFee=doctorFee+regFee;
-		String bullnum="cmsb00"+patientId;
+		String bullnum="MSP000"+patientId;
 		recBill.setPatientName(pName);
 		recBill.setRegFee(regFee);
 		recBill.setDoctorFee(doctorFee);

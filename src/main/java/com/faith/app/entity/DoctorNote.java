@@ -33,12 +33,22 @@ public class DoctorNote {
 	@JoinColumn(name="appointmentId",insertable=false,updatable=false)
 	private Appointment appointment;
 
-	public int getDoctorNoteId() {
+
+
+	public Integer getDoctorNoteId() {
 		return doctorNoteId;
 	}
 
-	public void setDoctorNoteId(int doctorNoteId) {
+	public void setDoctorNoteId(Integer doctorNoteId) {
 		this.doctorNoteId = doctorNoteId;
+	}
+
+	public Integer getAppointmentId() {
+		return appointmentId;
+	}
+
+	public void setAppointmentId(Integer appointmentId) {
+		this.appointmentId = appointmentId;
 	}
 
 	public String getNote() {
